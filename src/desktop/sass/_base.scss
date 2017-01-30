@@ -17,7 +17,7 @@ a, a:visited, a:focus {
 	outline: none;
 }
 input {border: none;outline: none;}
-a,input,span {transition: all .25s;}
+a,input,span,div {transition: all .25s;}
 input:focus, textarea:focus {outline: 0;}
 h1, h2, h3, h4, h5, h6 {font-family: $main-font, sans-serif;}
 img {
@@ -32,6 +32,20 @@ sup:after,sup:before,a:after,a:before,br:after,br:before,img:after,img:before,sp
 h1,h2,h3,h4,h5{font-size:1em;font-weight:inherit;text-align:center;font-family: $second-font;font-weight: 300;letter-spacing: 0.01em}
 a{text-decoration:none;color:inherit;outline:0!important}
 button,input,textarea{outline: none;}
+
+::selection { background-color: rgba(177, 213, 38, .85);}
+::-moz-selection { background-color: rgba(177, 213, 38, .85);}
+
+section.header > div > div,
+section.menu > div > div,
+section.problem > div > div {top: 50%;}
+
+h2 {
+	font-family: $second-font;
+	color: $h-color;
+	font-size: 26px;
+	font-weight: bold;
+}
 
 @mixin sec() {
 	width: 100%;
@@ -52,7 +66,7 @@ button,input,textarea{outline: none;}
 			width: 100%;
 			position: absolute;
 			height: 600px;
-			top: 50%;
+			top: 55%;
 			margin-top: -300px;
 		}
 	}
@@ -87,4 +101,14 @@ button,input,textarea{outline: none;}
 	background: -ms-linear-gradient(50deg, rgba(64,171,16,0.8) 0%, rgba(185,221,16,1) 100%); /* ie10+ */
 	background: linear-gradient(40deg, rgba(64,171,16,0.8) 0%, rgba(185,221,16,1) 100%); /* w3c */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b9dd10', endColorstr='#40ab10',GradientType=0 ); /* ie6-9 */
+}
+
+@mixin gradient-btn() {
+	background: -moz-linear-gradient(90deg, rgba(122,181,7,1) 0%, rgba(165,209,6,1) 100%); /* ff3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(165,209,6,1)), color-stop(100%, rgba(122,181,7,1))); /* safari4+,chrome */
+	background: -webkit-linear-gradient(90deg, rgba(122,181,7,1) 0%, rgba(165,209,6,1) 100%); /* safari5.1+,chrome10+ */
+	background: -o-linear-gradient(90deg, rgba(122,181,7,1) 0%, rgba(165,209,6,1) 100%); /* opera 11.10+ */
+	background: -ms-linear-gradient(90deg, rgba(122,181,7,1) 0%, rgba(165,209,6,1) 100%); /* ie10+ */
+	background: linear-gradient(0deg, rgba(122,181,7,1) 0%, rgba(165,209,6,1) 100%); /* w3c */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a5d106', endColorstr='#7ab507',GradientType=0 ); /* ie6-9 */
 }
